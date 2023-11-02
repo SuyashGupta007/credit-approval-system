@@ -1,0 +1,32 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: user
+      POSTGRES_DB: credit-approval-system
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+  express:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+    environment:
+      DB_HOST: postgres
+      DB_USER: postgres
+      DB_PASSWORD: user
+      DB_NAME: credit-approval-system
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "user",
+    "database": "credit-approval-system",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "user",
+    "database": "credit-approval-system",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "user",
+    "database": "credit-approval-system",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
